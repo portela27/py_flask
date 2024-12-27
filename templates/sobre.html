@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Diário do Professor</h2>
+    <hr>
+    {% for registro in registro %}
+    <details>
+        <summary>{{registro.aluno}}</summary>
+        <p>{{registro.nota}}</p>
+    </details>
+    {% endfor %}
+    <form action="{{ url_for('sobre') }}" method="POST">
+        <label>Aluno</label>
+        <input type="text" name="aluno" required>
+        <label>Nota</label>
+        <input type="text" name="nota" required>
+        <button>Adicionar</button>
+    </form>
+</body>
+
+</html>
