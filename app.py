@@ -14,7 +14,7 @@ def principal():
 
 @app.route('/sobre', methods=["GET", "POST"])
 def sobre():
-   #notas = {"Fulano":5.0, "Bltrano":7.4, "Aluno":7.0}
+  
    if request.method == "POST":
       if request.form.get("aluno") and request.form.get("nota"):
         registro.append({"aluno": request.form.get("aluno"),"nota": request.form.get("nota")})
